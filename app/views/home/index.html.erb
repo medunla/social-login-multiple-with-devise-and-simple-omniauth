@@ -1,7 +1,10 @@
 <h1>User(devise)</h1>
 
 <% unless current_user %>
-	<%= link_to "Sign in with Facebook", "auth/facebook?type=user" %>
+	<%= link_to "Sign in with Facebook", "/auth/facebook?type=user" %>
+	<br>
+	<%= link_to "Devise Sign in link", new_user_session_path %>
+	
 <% else %>
 	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
 	<br>
@@ -14,7 +17,7 @@
 
 <h1>Visitor(simple omniauth)</h1>
 <% unless current_visitor %>
-	<%= link_to "Sign in with Facebook", "auth/facebook?type=visitor" %>
+	<%= link_to "Sign in with Facebook", "/auth/facebook?type=visitor" %>
 <% else %>
 	<%= link_to "Logout", sign_out_url, method: :delete %>
 	<br>
