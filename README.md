@@ -1,5 +1,9 @@
 # README
 
+My versions are
+* ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-darwin14]
+* Rails 5.1.1
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
