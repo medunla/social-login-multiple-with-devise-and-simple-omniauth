@@ -1,0 +1,24 @@
+<h1>User(devise)</h1>
+
+<% unless current_user %>
+	<%= link_to "Sign in with Facebook", "auth/facebook?type=user" %>
+<% else %>
+	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+	<br>
+	<%= image_tag( current_user.image ) %>
+	<p><%= current_user.name %></p>
+	<p><%= current_user.email %></p>
+<% end %>
+
+<hr>
+
+<h1>Visitor(simple omniauth)</h1>
+<% unless current_visitor %>
+	<%= link_to "Sign in with Facebook", "auth/facebook?type=visitor" %>
+<% else %>
+	<%= link_to "Logout", sign_out_url, method: :delete %>
+	<br>
+	<%= image_tag( current_visitor.image ) %>
+	<p><%= current_visitor.name %></p>
+	<p><%= current_visitor.email %></p>
+<% end %>
